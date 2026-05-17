@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meher Godavarti | Senior Software Engineer</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#121933;
+      --panel-2:#182142;
+      --text:#edf2ff;
+      --muted:#a9b4d0;
+      --accent:#6ea8fe;
+      --accent-2:#8ef0c7;
+      --border:rgba(255,255,255,0.09);
+      --shadow:0 10px 30px rgba(0,0,0,0.28);
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg,#0a0f1d 0%,#0d1328 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+    header{
+      position:sticky;
+      top:0;
+      backdrop-filter:blur(10px);
+      background:rgba(10,15,29,0.72);
+      border-bottom:1px solid var(--border);
+      z-index:100;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+      color:var(--text);
+    }
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      font-size:14px;
+    }
+    .hero{
+      padding:72px 0 44px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.3fr .9fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .card{
+      background:linear-gradient(180deg,var(--panel) 0%,var(--panel-2) 100%);
+      border:1px solid var(--border);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+    }
+    .hero-main{
+      padding:34px;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:6px 10px;
+      background:rgba(110,168,254,0.12);
+      color:#bfd5ff;
+      border:1px solid rgba(110,168,254,0.24);
+      border-radius:999px;
+      font-size:12px;
+      margin-bottom:16px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(34px,5vw,56px);
+      line-height:1.05;
+    }
+    .subtitle{
+      color:var(--accent-2);
+      font-size:18px;
+      margin-bottom:16px;
+      font-weight:600;
+    }
+    .summary{
+      color:var(--muted);
+      max-width:68ch;
+      margin-bottom:24px;
+    }
+    .cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:600;
+      border:1px solid var(--border);
+      text-decoration:none;
+      transition:transform .15s ease, background .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px);text-decoration:none}
+    .btn-primary{
+      background:var(--accent);
+      color:#071224;
+      border-color:transparent;
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,0.03);
+      color:var(--text);
+    }
+    .hero-side{
+      padding:28px;
+      display:grid;
+      gap:16px;
+      align-content:start;
+    }
+    .mini-card{
+      padding:16px 18px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid var(--border);
+      border-radius:16px;
+    }
+    .mini-title{
+      margin:0 0 6px;
+      font-size:13px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .mini-value{
+      margin:0;
+      font-size:15px;
+      font-weight:600;
+    }
+    section{
+      padding:18px 0 26px;
+    }
+    .section-title{
+      font-size:28px;
+      margin:0 0 16px;
+    }
+    .section-copy{
+      color:var(--muted);
+      margin:0 0 18px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+    .timeline{
+      display:grid;
+      gap:16px;
+    }
+    .timeline-item{
+      padding:20px;
+    }
+    .timeline-header{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .role{
+      margin:0;
+      font-size:20px;
+    }
+    .company{
+      margin:2px 0 0;
+      color:var(--accent-2);
+      font-weight:600;
+    }
+    .date{
+      color:var(--muted);
+      font-size:14px;
+      white-space:nowrap;
+    }
+    ul{
+      margin:10px 0 0 18px;
+      padding:0;
+    }
+    li{margin:7px 0;color:#dbe4ff}
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .tag{
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid var(--border);
+      color:#dce5ff;
+      font-size:14px;
+    }
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:18px;
+    }
+    .project{
+      padding:22px;
+    }
+    .project h3{
+      margin:0 0 10px;
+      font-size:19px;
+    }
+    .project p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
+    .project .label{
+      display:inline-block;
+      margin-top:4px;
+      font-size:12px;
+      color:var(--accent-2);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .education-item{
+      padding:20px;
+    }
+    .footer{
+      padding:34px 0 60px;
+      color:var(--muted);
+      text-align:center;
+      font-size:14px;
+    }
+    .note{
+      color:var(--muted);
+      font-size:14px;
+    }
+    @media (max-width:900px){
+      .hero-grid,.grid-2{grid-template-columns:1fr}
+      .nav{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Meher Godavarti</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Highlights</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="about">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="eyebrow">Embedded Software • Software-Defined Vehicle • Validation • Functional Safety</div>
+          <h1>Hi, I’m Meher — I build automotive embedded software and engineering tools.</h1>
+          <div class="subtitle">Meher Teja Godavarti | Senior Software Engineer</div>
+          <p class="summary">
+            I’m a Senior Software Engineer with 9+ years of experience building and validating automotive embedded systems. My background spans suspension controls, software-defined vehicle development, gasoline engine ECU software, body electronics validation, and functional safety. I also enjoy creating developer tools and AI-enabled workflows that help engineering teams move faster with better quality.
+          </p>
+          <div class="cta">
+            <a class="btn btn-primary" href="mailto:meher359@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/mehergodavarti" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn btn-secondary" href="https://github.com/meher359" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <aside class="card hero-side">
+          <div class="mini-card">
+            <p class="mini-title">Current Role</p>
+            <p class="mini-value">Senior Software Engineer — Ride Height Controls (SDV)</p>
+          </div>
+          <div class="mini-card">
+            <p class="mini-title">Location</p>
+            <p class="mini-value">Milford, Michigan</p>
+          </div>
+          <div class="mini-card">
+            <p class="mini-title">Core Focus</p>
+            <p class="mini-value">Embedded software, controls, validation, traceability, automation, AI tooling</p>
+          </div>
+          <div class="mini-card">
+            <p class="mini-title">Website</p>
+            <p class="mini-value"><a href="https://meher359.github.io" target="_blank" rel="noreferrer">meher359.github.io</a></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-copy">I’ve worked across embedded development, vehicle controls, validation, software quality, functional safety, and engineering productivity in automotive systems.</p>
+
+      <div class="timeline">
+        <article class="card timeline-item">
+          <div class="timeline-header">
+            <div>
+              <h3 class="role">Senior Software Engineer — Ride Height Controls (SDV)</h3>
+              <p class="company">General Motors • Milford, Michigan</p>
+            </div>
+            <div class="date">Mar 2023 – Present</div>
+          </div>
+          <ul>
+            <li>Contribute to in-house Ride Height Control software for GM’s Software-Defined Vehicle platform.</li>
+            <li>Work across the full embedded software lifecycle from requirements and design to implementation, integration, and validation.</li>
+            <li>Develop suspension control software with systems, controls, calibration, and test teams.</li>
+            <li>Built developer productivity tools, including VS Code extensions for release letters, code formatting, and syntax error detection.</li>
+            <li>Co-developed a calibration visualization tool to support parameter tuning during program development.</li>
+            <li>Authored requirements with end-to-end traceability through TFRP and co-simulation testing.</li>
+            <li>Helped build AI agents to automate documentation and engineering workflows.</li>
+          </ul>
+        </article>
+
+        <article class="card timeline-item">
+          <div class="timeline-header">
+            <div>
+              <h3 class="role">Senior Software Engineer — Gasoline Engines (GEPA ART)</h3>
+              <p class="company">General Motors • Milford, Michigan</p>
+            </div>
+            <div class="date">Sep 2022 – Mar 2023</div>
+          </div>
+          <ul>
+            <li>Supported gasoline engine ECU software for legacy embedded systems.</li>
+            <li>Worked on defect resolution, enhancements, and production stability.</li>
+            <li>Investigated software issues using warranty and quality data, including embedded debugging and optimization.</li>
+            <li>Collaborated with systems, calibration, and integration teams to support releases and quality goals.</li>
+          </ul>
+        </article>
+
+        <article class="card timeline-item">
+          <div class="timeline-header">
+            <div>
+              <h3 class="role">Component Validation Engineer — Body Electronics</h3>
+              <p class="company">General Motors • Warren, Michigan</p>
+            </div>
+            <div class="date">Aug 2018 – Sep 2022</div>
+          </div>
+          <ul>
+            <li>Led validation for Body Electronics modules including PTM, PFCM, PSGM, SAM, ARB, PEGM, and PEM.</li>
+            <li>Managed validation activities across EE, EMC, environmental, durability, and compliance requirements.</li>
+            <li>Developed master validation plans, process flows, and detailed test cases.</li>
+            <li>Executed testing across reliability, diagnostics, OTA, cybersecurity, GMW3172, and FMVSS/MVSS compliance areas.</li>
+            <li>Supported validation automation using ATTS, dSPACE, AUTOVAL, and Vehicle Spy.</li>
+          </ul>
+        </article>
+
+        <article class="card timeline-item">
+          <div class="timeline-header">
+            <div>
+              <h3 class="role">Functional Safety Validation Engineer — Chassis Electronics</h3>
+              <p class="company">Populus Group / GM Contract • Milford, Michigan</p>
+            </div>
+            <div class="date">Aug 2016 – Aug 2018</div>
+          </div>
+          <ul>
+            <li>Performed ISO 26262 functional safety validation for safety-critical chassis and powertrain systems.</li>
+            <li>Designed and executed fault-injection tests for hardware and serial communication failures.</li>
+            <li>Managed ASIL requirements, traceability, and coverage using IBM DOORS and VCRI.</li>
+            <li>Developed MATLAB/Simulink and Stateflow models integrated with dSPACE HIL systems.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Highlights</h2>
+      <p class="section-copy">A few examples of the kinds of work I’ve contributed to.</p>
+
+      <div class="project-grid">
+        <article class="card project">
+          <span class="label">Vehicle Controls</span>
+          <h3>Ride Height Control Software</h3>
+          <p>Worked on in-house suspension control software for GM’s software-defined vehicle platform, from requirements through validation.</p>
+        </article>
+
+        <article class="card project">
+          <span class="label">Developer Tooling</span>
+          <h3>VS Code Extensions for Engineering Workflows</h3>
+          <p>Built internal tools to support release-letter generation, formatting, and code quality checks.</p>
+        </article>
+
+        <article class="card project">
+          <span class="label">AI Enablement</span>
+          <h3>AI Agents for Engineering Productivity</h3>
+          <p>Applied LLM-based automation to documentation and workflow-heavy engineering tasks.</p>
+        </article>
+
+        <article class="card project">
+          <span class="label">Validation</span>
+          <h3>Validation Automation & Test Systems</h3>
+          <p>Supported automated validation using dSPACE, AUTOVAL, ATTS, and Vehicle Spy across multiple automotive domains.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="grid-2">
+        <div class="card education-item">
+          <h3>Programming & Software</h3>
+          <div class="skills">
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">MATLAB/Simulink</span>
+            <span class="tag">Stateflow</span>
+            <span class="tag">Linux</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">ROS</span>
+            <span class="tag">Gazebo</span>
+            <span class="tag">IBM DOORS</span>
+          </div>
+        </div>
+        <div class="card education-item">
+          <h3>Automotive & Systems</h3>
+          <div class="skills">
+            <span class="tag">Embedded Software</span>
+            <span class="tag">Suspension Controls</span>
+            <span class="tag">ECU Software</span>
+            <span class="tag">Functional Safety</span>
+            <span class="tag">ISO 26262</span>
+            <span class="tag">CANalyzer</span>
+            <span class="tag">Vehicle Spy</span>
+            <span class="tag">INCA</span>
+            <span class="tag">dSPACE</span>
+            <span class="tag">AUTOVAL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="grid-2">
+        <article class="card education-item">
+          <h3>Oakland University</h3>
+          <p><strong>Master of Science, Mechatronics Engineering</strong></p>
+          <p class="note">Pursuing • Rochester, Michigan</p>
+        </article>
+        <article class="card education-item">
+          <h3>Lawrence Technological University</h3>
+          <p><strong>Master of Science, Industrial Engineering</strong></p>
+          <p class="note">May 2016 • Southfield, Michigan</p>
+        </article>
+      </div>
+      <div class="card education-item" style="margin-top:20px;">
+        <h3>Koneru Lakshmaiah University</h3>
+        <p><strong>Bachelor of Technology, Mechanical Engineering</strong></p>
+        <p class="note">May 2014 • Vijayawada, India</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card education-item">
+        <p><strong>Name:</strong> Meher Teja Godavarti (I go by Meher)</p>
+        <p><strong>Email:</strong> <a href="mailto:meher359@gmail.com">meher359@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mehergodavarti" target="_blank" rel="noreferrer">linkedin.com/in/mehergodavarti</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/meher359" target="_blank" rel="noreferrer">github.com/meher359</a></p>
+        <p><strong>Portfolio URL:</strong> <a href="https://meher359.github.io" target="_blank" rel="noreferrer">meher359.github.io</a></p>
+      </div>
+    </section>
+
+    <div class="footer">
+      © Meher Teja Godavarti • Built with GitHub Pages
+    </div>
+  </main>
+</body>
+</html>
